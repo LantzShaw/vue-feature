@@ -20,12 +20,20 @@
     </Header>
 
     <Bar v-model="name" />
+
+    <Foo />
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 
 import Header from './components/Header.vue'
+import Foo from './components/Foo.vue'
+import Bar from './components/Bar.vue'
 
-const name = ref('')
+console.log('step', Foo.compilerOptions)
+
+const name = ref('ddd')
+
+provide('name', name)
 </script>
