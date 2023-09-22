@@ -3,6 +3,8 @@
     <!-- <template v-slot="defaultProps">
             {{ defaultProps }}
         </template> -->
+
+    <!-- $attrs $slots -->
     <template #default="defaultProps">
       {{ defaultProps }}
     </template>
@@ -30,6 +32,14 @@ import { provide, ref } from 'vue'
 import Header from './components/Header.vue'
 import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
+
+// defineModel()
+// defineOptions({
+//   name: 'App',
+// })
+
+// const modelValue = defineModel()
+// modelValue.value++
 
 // NOTE: 调用子组件数据和方法时
 const foo = ref<InstanceType<typeof Foo> | null>(null)
