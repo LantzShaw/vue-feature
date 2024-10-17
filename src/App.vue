@@ -24,6 +24,9 @@
   <Bar v-model="name" />
 
   <Foo />
+  <hr />
+  <h2>模板引用</h2>
+  <TemplateRefDemo style="color: #f40" />
 </template>
 
 <script setup lang="ts">
@@ -32,6 +35,7 @@ import { provide, ref } from 'vue'
 import Header from './components/Header.vue'
 import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
+import TemplateRefDemo from './components/TemplateRefDemo.vue'
 
 // defineModel()
 // defineOptions({

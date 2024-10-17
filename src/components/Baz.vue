@@ -3,6 +3,8 @@
 </template>
 
 <script lang="ts" setup>
+import { reactive, ref, watch, watchEffect } from 'vue'
+
 /**
  * @reference https://juejin.cn/post/7092412488725037087
  *
@@ -27,26 +29,26 @@ watch(address, (newVal, oldVal) => {})
 watch(address, (newVal, oldVal) => {}, { deep: true })
 
 // 监听多个
-watch([() => address.rooNo, name], () => {})
+watch([() => address.roomNo, name], () => {})
 
 // 监听对象中的某个属性
 watch(
-  () => addres.streets,
+  () => address.streets,
   (newVal, oldVal) => {}
 )
 
 // 自动收集依赖项
-watchEffect(book, (newVal, oldVal) => {})
+// watchEffect(book, (newVal, oldVal) => {})
 
-watchEffect(book, (newVal, oldVal) => {}, {
-  // pre(默认)
-  // post // 确保加载完dom之后执行
-  // async
-  flush: 'post',
-})
+// watchEffect(book, (newVal, oldVal) => {}, {
+//   // pre(默认)
+//   // post // 确保加载完dom之后执行
+//   // async
+//   flush: 'post',
+// })
 
 const stop = watchEffect(() => {
-  console.log('name:', obj.name)
+  // console.log('name:', obj.name)
 })
 
 // 手动停止监听
