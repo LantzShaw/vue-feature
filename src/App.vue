@@ -27,6 +27,10 @@
   <hr />
   <h2>模板引用</h2>
   <TemplateRefDemo style="color: #f40" />
+
+  <h2>v-model</h2>
+
+  <Input v-model:title="title" />
 </template>
 
 <script setup lang="ts">
@@ -36,6 +40,7 @@ import Header from './components/Header.vue'
 import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
 import TemplateRefDemo from './components/TemplateRefDemo.vue'
+import Input from './components/Input.vue'
 
 // defineModel()
 // defineOptions({
@@ -52,6 +57,8 @@ const foo = ref<InstanceType<typeof Foo> | null>(null)
 console.log('step', Foo.compilerOptions)
 
 const name = ref('ddd')
+
+const title = ref('the title')
 
 provide('name', name)
 </script>
