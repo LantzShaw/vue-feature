@@ -31,6 +31,10 @@
   <h2>v-model</h2>
 
   <Input v-model:title="title" />
+
+  <hr />
+  <h2>Editor</h2>
+  <Editor />
 </template>
 
 <script setup lang="ts">
@@ -41,6 +45,7 @@ import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
 import TemplateRefDemo from './components/TemplateRefDemo.vue'
 import Input from './components/Input.vue'
+import Editor from './components/Editor/index.vue'
 
 // defineModel()
 // defineOptions({
