@@ -36,7 +36,9 @@
   <h2>Editor</h2>
   <Editor />
 
-  <Watchers />
+  <!-- NOTE: 组件名字必须使用 kebab-case 风格且不支持自闭合标签。因此你不能直接写 <RouterView />，而需要使用 <router-view></router-view> -->
+  <!-- <router-view /> -->
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
@@ -49,12 +51,10 @@ import TemplateRefDemo from './components/TemplateRefDemo.vue'
 import Input from './components/Input.vue'
 import Editor from './components/Editor/index.vue'
 
-import Watchers from './views/Watchers/index.vue'
-
 // defineModel()
-// defineOptions({
-//   name: 'App',
-// })
+defineOptions({
+  name: 'App',
+})
 
 // const modelValue = defineModel()
 // modelValue.value++
