@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import { provide, ref } from 'vue'
+
+import Header from '@/components/Header.vue'
+import TemplateRefsDemo from '@/components/demo/TemplateRefsDemo/index.vue'
+import Bar from '@/components/Bar.vue'
+import TemplateRefDemo from '@/components/TemplateRefDemo.vue'
+import Input from '@/components/Input.vue'
+import Editor from '@/components/Editor/index.vue'
+
+// defineModel()
+defineOptions({
+  name: 'App',
+})
+
+// const modelValue = defineModel()
+// modelValue.value++
+
+// NOTE: 调用子组件数据和方法时
+const templateRefsDemoRef = ref<InstanceType<typeof TemplateRefsDemo> | null>(null)
+// const templateRefsDemoRef = ref<InstanceType<typeof TemplateRefsDemo>[]>([])
+
+console.log('step', TemplateRefsDemo.compilerOptions)
+
+const name = ref('ddd')
+const title = ref('the title')
+
+provide('name', name)
+</script>
+
 <template>
   <Header>
     <!-- <template v-slot="defaultProps">
@@ -40,33 +70,3 @@
   <!-- <router-view /> -->
   <router-view></router-view>
 </template>
-
-<script setup lang="ts">
-import { provide, ref } from 'vue'
-
-import Header from './components/Header.vue'
-import TemplateRefsDemo from './components/TemplateRefsDemo.vue'
-import Bar from './components/Bar.vue'
-import TemplateRefDemo from './components/TemplateRefDemo.vue'
-import Input from './components/Input.vue'
-import Editor from './components/Editor/index.vue'
-
-// defineModel()
-defineOptions({
-  name: 'App',
-})
-
-// const modelValue = defineModel()
-// modelValue.value++
-
-// NOTE: 调用子组件数据和方法时
-const templateRefsDemoRef = ref<InstanceType<typeof TemplateRefsDemo> | null>(null)
-// const templateRefsDemoRef = ref<InstanceType<typeof TemplateRefsDemo>[]>([])
-
-console.log('step', TemplateRefsDemo.compilerOptions)
-
-const name = ref('ddd')
-const title = ref('the title')
-
-provide('name', name)
-</script>

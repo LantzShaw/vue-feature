@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import WatchersDemo from '../../components/WatchersDemo.vue'
+import WatchersDemo from '@/components/demo/WatchersDemo/index.vue'
 </script>
 
 <template>

@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { reactive, ref, watch, watchEffect } from 'vue'
 
+defineOptions({
+  name: 'WatchersDemo',
+})
+
 /**
  * 侦听器 - Watchers
  *

@@ -1,21 +1,3 @@
-<template>
-  <div>{{ name }}</div>
-  <button :disabled="isReadOnly(status)"></button>
-
-  <div ref="items" v-for="item in itemList" :key="item">
-    {{ item }}
-  </div>
-
-  <div ref="firstRef">
-    <div ref="secondRef">
-      <div ref="thirdRef">获取ref中的ref</div>
-    </div>
-  </div>
-
-  <input type="text" :ref="inputRef" />
-  <input type="text" ref="inputDom" />
-</template>
-
 <script lang="ts" setup>
 /**
  * 模板引用 - Template Refs
@@ -114,3 +96,21 @@ onMounted(() => {
  */
 defineExpose({})
 </script>
+
+<template>
+  <div>{{ name }}</div>
+  <button :disabled="isReadOnly(status)"></button>
+
+  <div ref="items" v-for="item in itemList" :key="item">
+    {{ item }}
+  </div>
+
+  <div ref="firstRef">
+    <div ref="secondRef">
+      <div ref="thirdRef">获取ref中的ref</div>
+    </div>
+  </div>
+
+  <input type="text" :ref="inputRef" />
+  <input type="text" ref="inputDom" />
+</template>

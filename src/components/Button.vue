@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 defineOptions({
   name: 'Button',
+  inheritAttrs: false,
 })
 
 const { onClick, type = 'secondary' } = defineProps<{
